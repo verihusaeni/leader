@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kamu Pemimpin Seperti Apa?</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1a1240;--bg2:#2b1a63;--card:#ffffff14;--line:#ffffff26;--tx:#f5f2ff;--mu:#b9b0e0;--pk:#ff5c8a;--yl:#ffd23f;--mt:#3ddc97;--bl:#5cc8ff}
+*{box-sizing:border-box;margin:0}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--tx);min-height:100vh;background:radial-gradient(circle at 15% 0,#5b2bb5 0,transparent 45%),radial-gradient(circle at 100% 100%,#c2307a55 0,transparent 40%),linear-gradient(160deg,var(--bg),var(--bg2));background-attachment:fixed;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
+h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif;line-height:1.1}
+.wrap{max-width:560px;margin:0 auto;padding:22px 18px 40px}
+.wide{max-width:960px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.hero h1{font-size:clamp(2.4rem,11vw,3.6rem);font-weight:800;letter-spacing:-.02em;margin:10px 0 12px}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--yl),var(--pk));-webkit-background-clip:text;background-clip:text;color:transparent}
+.mu{color:var(--mu);font-size:.95rem;line-height:1.55}
+.compass{width:92px;height:92px;animation:spin 14s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+label{display:block;font-weight:700;font-size:.85rem;margin:14px 0 6px}
+input,textarea,select{width:100%;padding:13px 14px;border-radius:14px;border:1.5px solid var(--line);background:#0000002e;color:var(--tx);font:inherit;font-size:16px;outline:none}
+input:focus,textarea:focus,select:focus{border-color:var(--yl)}
+select option{color:#111}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.btn{display:block;width:100%;margin-top:20px;padding:15px;border:0;border-radius:16px;font:700 1rem 'DM Sans',sans-serif;color:#2a0b3a;background:linear-gradient(90deg,var(--yl),#ff9d5c);cursor:pointer;box-shadow:0 8px 24px #ff9d5c44}
+.btn:active{transform:scale(.98)}
+.btn.ghost{background:transparent;color:var(--tx);border:1.5px solid var(--line);box-shadow:none}
+.btn.sm{display:inline-block;width:auto;margin:0;padding:9px 14px;font-size:.85rem}
+.err{color:#ff9db7;font-size:.85rem;margin-top:10px;min-height:1em}
+.hide{display:none}
+.bar{height:8px;border-radius:99px;background:#ffffff1f;overflow:hidden;margin:6px 0 20px}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--pk),var(--yl));transition:width .35s}
+.qn{color:var(--mu);font-size:.85rem;font-weight:700}
+.q{font-size:1.45rem;font-weight:800;margin:6px 0 18px}
+.opt{display:block;width:100%;text-align:left;padding:15px 16px;margin-bottom:10px;border-radius:16px;border:1.5px solid var(--line);background:#ffffff0d;color:var(--tx);font:500 .98rem/1.4 'DM Sans',sans-serif;cursor:pointer;transition:.15s}
+.opt:hover{border-color:var(--yl)}
+.opt.on{background:var(--yl);color:#2a0b3a;border-color:var(--yl);font-weight:700}
+.res-top{text-align:center}
+.emo{font-size:4rem}
+.res-top h2{font-size:2.2rem;font-weight:800;margin:6px 0 6px}
+.tag{color:var(--yl);font-weight:700}
+.sec{margin-top:22px}
+.sec h3{font-size:1.15rem;margin-bottom:10px}
+.sec ul{padding-left:0;list-style:none}
+.sec li{padding:10px 12px;margin-bottom:8px;border-radius:12px;background:#ffffff0f;font-size:.93rem;line-height:1.45}
+.pot li{border-left:4px solid var(--mt)}
+.kur li{border-left:4px solid var(--pk)}
+.tip li{border-left:4px solid var(--bl)}
+.dist div{display:flex;justify-content:space-between;font-size:.88rem;font-weight:700}
+.dist .bar{margin:5px 0 12px}
+.foot{text-align:center;margin-top:26px}
+.foot a{color:var(--mu);font-size:.8rem;cursor:pointer;text-decoration:underline}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:16px 0}
+.stat{padding:14px;border-radius:16px;background:#ffffff12;border:1px solid var(--line)}
+.stat b{font-family:'Bricolage Grotesque',sans-serif;font-size:1.8rem;display:block}
+.tw{overflow-x:auto;margin-top:12px}
+table{width:100%;border-collapse:collapse;font-size:.85rem;min-width:640px}
+th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--mu);font-weight:700}
+.pill{display:inline-block;padding:3px 10px;border-radius:99px;background:#ffd23f26;color:var(--yl);font-weight:700;font-size:.78rem;white-space:nowrap}
+.x{background:none;border:0;color:#ff9db7;cursor:pointer;font-size:1rem}
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<script>
+const TYPES={
+V:{n:'Pemimpin Visioner',e:'🚀',t:'Sang Pembawa Arah',d:'Kamu melihat jauh ke depan. Kamu memimpin dengan gagasan besar, semangat, dan kemampuan membuat orang percaya bahwa masa depan yang lebih baik bisa dicapai bersama.',
+p:['Mampu menginspirasi dan membakar semangat tim','Berani mengambil risiko dan membuka peluang baru','Kreatif dan adaptif terhadap perubahan','Pandai menyampaikan tujuan jangka panjang'],
+k:['Kurang memperhatikan detail teknis dan eksekusi harian','Bisa terlalu optimis dan meremehkan hambatan','Kadang membuat tim kewalahan oleh ide yang terus berganti'],
+s:['Gandeng rekan yang kuat di eksekusi dan detail','Pecah visi menjadi target kecil yang terukur','Cek kesiapan tim sebelum meluncurkan ide baru']},
+E:{n:'Pemimpin Eksekutor',e:'🎯',t:'Sang Penggerak Hasil',d:'Kamu tegas, cepat, dan fokus pada hasil. Saat situasi genting, kamu berani mengambil kendali dan memastikan pekerjaan selesai.',
+p:['Tegas dan cepat mengambil keputusan','Berorientasi target dan tahan tekanan','Mampu mengorganisir dan membagi tugas dengan jelas','Memberi rasa aman saat krisis karena arah yang jelas'],
+k:['Cenderung kurang sabar dan terkesan keras','Kurang menggali perasaan dan masukan anggota tim','Berisiko mengabaikan proses demi hasil'],
+s:['Latih mendengarkan sebelum memutuskan','Beri apresiasi pada proses, bukan hanya hasil','Sisihkan waktu untuk ngobrol santai dengan tim']},
+P:{n:'Pemimpin Pengayom',e:'🤝',t:'Sang Penjaga Tim',d:'Kamu memimpin dengan hati. Kamu peka terhadap kebutuhan orang lain dan membangun tim yang solid, saling percaya, dan nyaman berkembang.',
+p:['Empati tinggi dan pendengar yang baik','Membangun kepercayaan dan kekompakan tim','Piawai menengahi konflik','Menumbuhkan potensi setiap anggota'],
+k:['Sulit bersikap tegas atau berkata tidak','Cenderung menghindari konflik dan keputusan tak populer','Mudah menanggung beban emosi tim sendirian'],
+s:['Latih komunikasi asertif dengan tetap sopan','Tetapkan batas yang jelas antara peduli dan memanjakan','Berani memberi umpan balik yang jujur']},
+A:{n:'Pemimpin Analitis',e:'🧠',t:'Sang Perancang Strategi',d:'Kamu berpikir logis dan terukur. Keputusanmu berpijak pada data dan pertimbangan matang, sehingga tim merasa yakin dengan arahmu.',
+p:['Teliti dan sistematis dalam merencanakan','Keputusan objektif dan adil','Mampu menilai risiko dengan baik','Menjaga kualitas dan standar kerja'],
+k:['Terlalu lama menimbang sehingga lambat bertindak','Cenderung kaku dan kurang fleksibel','Kurang menunjukkan sisi hangat kepada tim'],
+s:['Tetapkan batas waktu untuk menganalisis','Terima keputusan "cukup baik" saat situasi mendesak','Tunjukkan kepedulian lewat sapaan dan apresiasi']}};
+// urutan opsi: V, E, P, A (diacak saat ditampilkan)
+const Q=[
+['Tim menghadapi masalah besar secara mendadak. Reaksi pertamamu?','Mengajak tim melihat gambaran besar dan mencari peluang baru','Langsung mengambil keputusan dan membagi tugas','Menenangkan tim dan memastikan semua baik-baik saja','Mengumpulkan data dan menganalisis penyebabnya'],
+['Kapan kamu merasa paling bangga sebagai pemimpin?','Ketika visimu menginspirasi banyak orang','Ketika target tercapai tepat waktu','Ketika anggota timku tumbuh dan berkembang','Ketika keputusanku terbukti tepat berdasarkan data'],
+['Anggota tim melakukan kesalahan fatal. Kamu akan...','Mengingatkan tujuan besar dan mengajaknya bangkit','Meminta pertanggungjawaban dan segera memperbaiki','Mendengar alasannya dan memberi dukungan','Menelusuri akar masalah agar tidak terulang'],
+['Rapat seperti apa yang paling kamu sukai?','Brainstorming ide-ide segar','Singkat, padat, langsung eksekusi','Semua orang bebas bicara dan didengar','Terstruktur dengan agenda dan data'],
+['Dua anggota timmu berselisih. Kamu akan...','Mengalihkan fokus ke tujuan bersama','Memutuskan cepat agar pekerjaan lanjut','Mempertemukan mereka dan menjadi penengah','Menilai fakta dari kedua belah pihak'],
+['Saat harus mengambil keputusan sulit, kamu...','Mengikuti intuisi dan visi jangka panjang','Memutuskan cepat dan menyesuaikan sambil jalan','Memikirkan dampaknya bagi orang-orang terlibat','Membandingkan semua opsi beserta untung-ruginya'],
+['Teman-temanmu paling mungkin menyebutmu...','Pemimpi yang menginspirasi','Tegas dan pantang menyerah','Hangat dan peduli','Teliti dan logis'],
+['Proyek baru dimulai. Hal pertama yang kamu lakukan?','Merumuskan visi dan tujuan akhir','Menyusun target dan tenggat','Mengenal kekuatan dan kebutuhan tiap anggota','Menyusun rencana dan analisis risiko'],
+['Terjadi perubahan mendadak di tengah jalan. Kamu...','Antusias, karena perubahan adalah peluang','Segera menyesuaikan strategi dan bergerak','Mendampingi tim agar nyaman beradaptasi','Mempelajari dampaknya sebelum bertindak'],
+['Cara terbaikmu memotivasi tim?','Menceritakan mimpi besar yang ingin dicapai','Menetapkan tantangan dan imbalan yang jelas','Perhatian personal dan apresiasi tulus','Menunjukkan kemajuan lewat angka dan capaian'],
+['Tenggat tinggal sedikit dan pekerjaan masih banyak. Kamu...','Tetap optimis dan meyakinkan tim bahwa bisa','Mengambil kendali dan memacu tim','Menjaga semangat dan kondisi tim','Memprioritaskan tugas paling kritis secara sistematis'],
+['Kekuranganmu yang paling mungkin terjadi?','Kurang memperhatikan detail','Terlalu keras dan kurang sabar','Sulit tegas dan tidak enak menolak','Terlalu lama menimbang dan kaku'],
+['Anggota tim mengkritik caramu memimpin. Kamu...','Mendengarkan dan memakainya untuk menyempurnakan visi','Menerima bila masuk akal, tapi tetap pada arah','Berterima kasih dan merasa perlu introspeksi','Menilai apakah kritik itu didukung bukti'],
+['Pemimpin idealmu adalah yang...','Membawa perubahan besar','Mewujudkan hasil nyata','Memberdayakan orang lain','Bijak, adil, dan berdasarkan fakta'],
+['Apa yang ingin kamu tinggalkan sebagai pemimpin?','Gagasan yang mengubah banyak hal','Prestasi dan sistem yang kokoh','Orang-orang yang tumbuh karenaku','Pengetahuan dan cara kerja yang terbukti andal']];
+const K='lead_results',AU='admin',AP='admin123',KEYS=['V','E','P','A'];
+let me={},ans=[],cur=0,admin=false;
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const load=()=>{try{return JSON.parse(localStorage.getItem(K))||[]}catch(e){return[]}};
+const save=a=>{try{localStorage.setItem(K,JSON.stringify(a))}catch(e){}};
+const shuf=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+const view=h=>{$('#app').innerHTML=h;window.scrollTo(0,0)};
+
+function home(){view(`<div class="wrap hero">
+<svg class="compass" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="none" stroke="#ffd23f" stroke-width="3"/><circle cx="50" cy="50" r="36" fill="none" stroke="#ffffff33" stroke-width="1.5" stroke-dasharray="3 5"/><path d="M50 12 62 50 50 88 38 50Z" fill="#ff5c8a"/><path d="M50 12 62 50 38 50Z" fill="#ffd23f"/><circle cx="50" cy="50" r="4" fill="#1a1240"/></svg>
+<h1>Kamu pemimpin <em>seperti apa?</em></h1>
+<p class="mu" style="margin-bottom:20px">Jawab 15 pertanyaan singkat tentang caramu memimpin dan mengambil keputusan. Tidak ada jawaban benar atau salah, pilih yang paling menggambarkan dirimu.</p>
+<form class="card" id="f" autocomplete="off">
+<label for="nm">Nama lengkap</label><input id="nm" required maxlength="60" placeholder="Contoh: Budi Santoso">
+<div class="row"><div><label for="tp">Tempat lahir</label><input id="tp" required maxlength="40" placeholder="Bandung"></div>
+<div><label for="tl">Tanggal lahir</label><input id="tl" type="date" required></div></div>
+<label for="jk">Jenis kelamin</label><select id="jk" required><option value="">Pilih</option><option>Laki-laki</option><option>Perempuan</option></select>
+<label for="al">Alamat</label><textarea id="al" rows="3" required maxlength="200" placeholder="Alamat lengkap"></textarea>
+<button class="btn" type="submit">Mulai tes</button></form>
+<div class="foot"><a onclick="loginView()">Masuk sebagai admin</a></div></div>`);
+$('#f').onsubmit=e=>{e.preventDefault();me={nama:$('#nm').value.trim(),tempat:$('#tp').value.trim(),tgl:$('#tl').value,jk:$('#jk').value,alamat:$('#al').value.trim()};ans=[];cur=0;quiz()}}
+
+function quiz(){
+const q=Q[cur];const opts=shuf(KEYS.map((k,i)=>[k,q[i+1]]));
+view(`<div class="wrap"><div class="qn">Pertanyaan ${cur+1} dari ${Q.length}</div><div class="bar"><i style="width:${cur/Q.length*100}%"></i></div>
+<div class="card"><h2 class="q">${esc(q[0])}</h2>${opts.map(o=>`<button class="opt" data-k="${o[0]}">${esc(o[1])}</button>`).join('')}</div>
+${cur?'<button class="btn ghost sm" style="margin-top:14px" id="bk">Kembali</button>':''}</div>`);
+document.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{b.classList.add('on');ans[cur]=b.dataset.k;setTimeout(()=>{cur++;cur<Q.length?quiz():finish()},220)});
+const bk=$('#bk');if(bk)bk.onclick=()=>{cur--;quiz()}}
+
+function finish(){
+const sc={V:0,E:0,P:0,A:0};ans.forEach(k=>sc[k]++);
+const win=KEYS.reduce((a,b)=>sc[b]>sc[a]?b:a);
+const all=load();all.push({id:Date.now(),...me,tipe:win,skor:sc,waktu:new Date().toISOString()});save(all);
+result(win,sc)}
+
+function result(w,sc){const T=TYPES[w];const li=a=>a.map(x=>`<li>${esc(x)}</li>`).join('');
+view(`<div class="wrap"><div class="card res-top"><div class="emo">${T.e}</div><div class="tag">${esc(T.t)}</div><h2>${T.n}</h2>
+<p class="mu" style="margin-top:8px">${esc(me.nama||'')}</p><p style="margin-top:14px;line-height:1.6">${T.d}</p></div>
+<div class="card sec"><h3>Komposisi gaya kepemimpinanmu</h3><div class="dist">${KEYS.map(k=>{const p=Math.round(sc[k]/Q.length*100);return`<div><span>${TYPES[k].e} ${TYPES[k].n.replace('Pemimpin ','')}</span><span>${p}%</span></div><div class="bar"><i style="width:${p}%"></i></div>`}).join('')}</div></div>
+<div class="card sec"><h3>💪 Potensimu</h3><ul class="pot">${li(T.p)}</ul></div>
+<div class="card sec"><h3>🔧 Yang perlu diperbaiki</h3><ul class="kur">${li(T.k)}</ul></div>
+<div class="card sec"><h3>💡 Saran pengembangan</h3><ul class="tip">${li(T.s)}</ul></div>
+<button class="btn" onclick="home()">Selesai</button></div>`)}
+
+function loginView(){view(`<div class="wrap"><h1 style="font-size:2.2rem;margin:20px 0 14px">Masuk admin</h1><form class="card" id="lf">
+<label for="u">Username</label><input id="u" autocomplete="username" required>
+<label for="p">Password</label><input id="p" type="password" autocomplete="current-password" required>
+<div class="err" id="er"></div><button class="btn" style="margin-top:8px" type="submit">Masuk</button>
+<button class="btn ghost" type="button" onclick="home()">Kembali</button></form></div>`);
+$('#lf').onsubmit=e=>{e.preventDefault();if($('#u').value===AU&&$('#p').value===AP){admin=true;dash()}else $('#er').textContent='Username atau password salah. Coba lagi.'}}
+
+function dash(){if(!admin)return loginView();const d=load().slice().reverse();
+const cnt={V:0,E:0,P:0,A:0};d.forEach(r=>cnt[r.tipe]++);
+const tg=s=>s?new Date(s).toLocaleDateString('id-ID',{day:'numeric',month:'short',year:'numeric'}):'-';
+view(`<div class="wrap wide"><div class="top"><h1 style="font-size:2rem">Rekap peserta</h1><div><button class="btn sm" onclick="csv()">Unduh CSV</button> <button class="btn ghost sm" onclick="admin=false;home()">Keluar</button></div></div>
+<div class="stats"><div class="stat"><b>${d.length}</b>Total peserta</div>${KEYS.map(k=>`<div class="stat"><b>${cnt[k]}</b>${TYPES[k].e} ${TYPES[k].n.replace('Pemimpin ','')}</div>`).join('')}</div>
+<div class="card">${d.length?`<div class="tw"><table><tr><th>No</th><th>Nama</th><th>TTL</th><th>JK</th><th>Alamat</th><th>Hasil</th><th>Waktu</th><th></th></tr>
+${d.map((r,i)=>`<tr><td>${i+1}</td><td><b>${esc(r.nama)}</b></td><td>${esc(r.tempat)}, ${tg(r.tgl)}</td><td>${esc(r.jk)}</td><td>${esc(r.alamat)}</td><td><span class="pill">${TYPES[r.tipe].e} ${TYPES[r.tipe].n.replace('Pemimpin ','')}</span></td><td>${tg(r.waktu)}</td><td><button class="x" title="Hapus" onclick="del(${r.id})">✕</button></td></tr>`).join('')}</table></div>`:'<p class="mu">Belum ada peserta yang mengisi tes. Bagikan tautan aplikasi ini ke peserta.</p>'}</div>
+<p class="mu" style="margin-top:14px;font-size:.8rem">Data tersimpan di browser perangkat ini (localStorage).</p></div>`)}
+
+function del(id){if(confirm('Hapus data peserta ini?')){save(load().filter(r=>r.id!==id));dash()}}
+function csv(){const d=load();const h=['Nama','Tempat Lahir','Tanggal Lahir','Jenis Kelamin','Alamat','Hasil','Visioner','Eksekutor','Pengayom','Analitis','Waktu'];
+const rows=d.map(r=>[r.nama,r.tempat,r.tgl,r.jk,r.alamat,TYPES[r.tipe].n,r.skor.V,r.skor.E,r.skor.P,r.skor.A,r.waktu]);
+const t=[h,...rows].map(r=>r.map(c=>'"'+String(c).replace(/"/g,'""')+'"').join(',')).join('\n');
+const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\ufeff'+t],{type:'text/csv'}));a.download='rekap-kepemimpinan.csv';a.click()}
+home();
+</script>
+</body>
+</html>
